@@ -10,7 +10,7 @@ app.get('/', (req, res)=>{
 app.get('/grab', (req, res) => {
     const data = req.query.data
     //Guardamos la data que el usuario nos manda en una variable global
-    txt += data
+    txt += data + ""
     res.send(data);
 })
 
