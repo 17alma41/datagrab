@@ -12,6 +12,7 @@ app.post('/cookies', (req, res) => {
     //Recibir las cookies que  nos manda el usuario
     const cookies = req.body.cookies
 
+    res.send("Hola soy las cookies")
     console.log("Cookies recibidas :)", cookies);
 })
 
