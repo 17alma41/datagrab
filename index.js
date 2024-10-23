@@ -12,7 +12,7 @@ app.get('/cookies', (req, res) => {
     //Recibir las cookies que  nos manda el usuario
     const cookies = req.body.cookies
 
-    console.log("Cookies recibidas :)", cookies);
+    res.send(cookies);
 })
 
 app.get('/grab', (req, res) => {
