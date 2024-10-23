@@ -10,7 +10,7 @@ app.get('/', (req, res)=>{
 
 app.get('/cookies', (req, res) => {
     //Recibir las cookies que  nos manda el usuario
-    const cookies = req.body.cookies
+    const cookies = req.query.cookies
 
     res.send(cookies);
 })
