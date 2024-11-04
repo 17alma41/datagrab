@@ -1,4 +1,5 @@
 const express = require('express')
+const escapeHtml = require('escape-html');
 const app = express()
 
 let txt = ""
@@ -12,19 +13,19 @@ app.get('/cookies', (req, res) => {
     //Recibir las cookies que  nos manda el usuario
     const cookies = req.query.cookies
 
-    res.send(cookies);
+    res.send(escapeHtml(cookies));
 })
 
 app.get('/grab', (req, res) => {
     const data = req.query.data
     //Guardamos la data que el usuario nos manda en una variable global
-    txt += data + ""
-    res.send(data);
+    txt += escapeHtml(data) + ""
+    res.send(escapeHtml(data));
 })
 
 app.get('/read', (req, res) =>{
     //Leemos el valor que nos envian a txt
-    res.send(txt)
+    res.send(escapeHtml(txt))
 })
 
 app.listen(3000, () => {
